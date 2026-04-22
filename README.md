@@ -2,7 +2,7 @@
 
 A professional portfolio showcasing the intersection of digital craftsmanship and physical engineering. Built with a focus on performance, clean architecture, and modern aesthetics.
 
-![Portfolio Preview](src/myimages/mywebsite.png) 
+![Portfolio Preview](src/app/images/mywebsite.png) 
 
 ##  Overview
 
