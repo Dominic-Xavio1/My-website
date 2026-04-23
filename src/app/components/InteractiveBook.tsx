@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, GraduationCap, User, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, GraduationCap, User, BookOpen, Download } from 'lucide-react';
 import myimage from '../images/myimage.png';
+import cvFile from './files/resume.pdf';
 interface Page {
   id: number;
   title: string;
@@ -12,6 +13,16 @@ interface Page {
 export default function InteractiveBook() {
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState(0);
+
+  const handleDownloadCV = () => {
+    // Create a link to download the imported PDF file
+    const link = document.createElement('a');
+    link.href = cvFile;
+    link.download = 'Dominique_Savio_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const pages: Page[] = [
     {
@@ -205,19 +216,44 @@ export default function InteractiveBook() {
     setCurrentPage(index);
   };
 
-  const variants = {
+  // 🎨 ANIMATION CUSTOMIZATION SECTION - Edit these values to change the transition behavior
+  const slideVariants = {
     enter: (direction: number) => ({
-      rotateY: direction > 0 ? 90 : -90,
-      opacity: 0,
+      // Starting position: slide in from left (-100%) for next, right (100%) for previous
+      x: direction > 0 ? 100 : -100,  // 🎨 Change slide distance (100 = full width, 50 = half width)
+      opacity: 0,  // 🎨 Starting opacity (0 = invisible, 1 = fully visible)
+      scale: 0.95, // 🎨 Starting scale (1 = normal, 0.8 = smaller, 1.2 = larger)
     }),
     center: {
-      rotateY: 0,
-      opacity: 1,
+      // Final position: centered and fully visible
+      x: 0,  // 🎨 Final horizontal position (0 = centered)
+      opacity: 1,  // 🎨 Final opacity
+      scale: 1,  // 🎨 Final scale
     },
     exit: (direction: number) => ({
-      rotateY: direction > 0 ? -90 : 90,
-      opacity: 0,
+      // Exit position: slide out to left (-100%) for next, right (100%) for previous
+      x: direction > 0 ? -100 : 100,  // 🎨 Exit slide distance
+      opacity: 0,  // 🎨 Exit opacity
+      scale: 0.95, // 🎨 Exit scale
     }),
+  };
+
+  // 🎨 TRANSITION CUSTOMIZATION - Adjust timing and easing here
+  const slideTransition = {
+    x: {
+      type: 'spring', // 🎨 Animation type: 'spring', 'tween', 'inertia'
+      stiffness: 300, // 🎨 Spring stiffness (100-500: higher = faster)
+      damping: 30, // 🎨 Spring damping (20-50: higher = less bouncy)
+      mass: 1, // 🎨 Spring mass (affects weight/heaviness)
+    },
+    opacity: {
+      duration: 0.3, // 🎨 Fade duration in seconds
+      ease: 'easeInOut', // 🎨 Easing: 'linear', 'easeIn', 'easeOut', 'easeInOut'
+    },
+    scale: {
+      duration: 0.4, // 🎨 Scale animation duration
+      ease: 'easeInOut', // 🎨 Scale easing
+    },
   };
 
   return (
@@ -244,7 +280,22 @@ export default function InteractiveBook() {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto relative ">
+          {/* Floating CV Download Button */}
+          <motion.button
+            onClick={handleDownloadCV}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.4, type: 'spring', stiffness: 200 }}
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="fixed top-144 right-6 z-50 bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-3 rounded-full shadow-xl backdrop-blur-sm border border-accent/20 flex items-center gap-2 transition-all duration-300 hover:shadow-2xl"
+            title="Download CV"
+          >
+            <Download className="w-5 h-5" />
+            <span className="hidden md:inline font-medium">Download Resume</span>
+          </motion.button>
+
           <div className="relative" style={{ perspective: '2000px' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -264,14 +315,11 @@ export default function InteractiveBook() {
                     <motion.div
                       key={currentPage}
                       custom={direction}
-                      variants={variants}
+                      variants={slideVariants}  // 🎨 Uses the slide animation variants above
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      transition={{
-                        rotateY: { type: 'spring', stiffness: 100, damping: 20 },
-                        opacity: { duration: 0.3 },
-                      }}
+                      transition={slideTransition}  // 🎨 Uses the transition settings above
                       style={{ transformStyle: 'preserve-3d' }}
                     >
                       {pages[currentPage].content}

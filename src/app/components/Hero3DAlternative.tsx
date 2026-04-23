@@ -6,8 +6,8 @@ export default function Hero3DAlternative() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 20;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      const x = (e.clientX / window.innerWidth - 0.5) * 2050;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2050;
       setMousePosition({ x, y });
     };
 
@@ -44,7 +44,7 @@ export default function Hero3DAlternative() {
           style={{ perspective: '1000px' }}
         >
           <motion.div
-            className="relative w-full h-full"
+            className="relative w-full166 h-1full"
             animate={{
               rotateY: mousePosition.x,
               rotateX: -mousePosition.y,

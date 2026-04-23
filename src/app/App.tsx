@@ -8,6 +8,7 @@ import FuturePlans from './components/FuturePlans';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import {useEffect} from 'react';
+import Hero3D from './components/Hero3D';
 import myIcon from './images/myimage.png';
 export default function App() {
     useEffect(() => {
@@ -29,7 +30,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
-      <Hero3DAlternative />
+      {/* <Hero3DAlternative /> */}
+      <Hero3D/>
       <InteractiveBook />
       <TechStack />
       <PortfolioSection />

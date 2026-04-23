@@ -1,3 +1,4 @@
+import Hero3DAlternative from "./Hero3DAlternative";
 export default function Navigation() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -11,7 +12,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-accent rounded-sm"></div>
-          <span className="tracking-tight">PORTFOLIO</span>
+          <span className="tracking-tight">Dominique Savio</span>
         </div>
 
         <div className="hidden lg:flex gap-6">

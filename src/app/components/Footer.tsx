@@ -19,19 +19,19 @@ export default function Footer() {
             >
               <Circle className="w-3 h-3 fill-green-500 text-green-500" />
             </motion.div>
-            <span className="text-muted-foreground">Available for collaboration</span>
+            <span className="text-muted-foreground">You can find me on different platforms</span>
           </div>
 
           <div className="flex gap-6">
             <a
-              href="mailto:contact@example.com"
+              href="mailto:dominicxavio09@gmail.com"
               className="hover:text-accent transition-colors"
               aria-label="Email"
             >
               <Mail className="w-6 h-6" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Dominic-Xavio1"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
@@ -40,7 +40,7 @@ export default function Footer() {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/dominique-savio-3259bb3b0/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2026 Portfolio. Built with React & Tailwind CSS.</p>
+          <p>© 2026 Dominique Savio Full Stack Developer</p>
         </div>
       </div>
     </footer>
