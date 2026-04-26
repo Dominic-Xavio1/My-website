@@ -35,7 +35,7 @@ export default function App() {
       <InteractiveBook />
       <TechStack />
       <PortfolioSection />
-      <CVDownload />
+      {/* <CVDownload /> */}
       <FuturePlans />
       <ContactForm />
       <Footer />

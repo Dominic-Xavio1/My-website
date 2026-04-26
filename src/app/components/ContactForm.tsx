@@ -10,13 +10,29 @@ export default function ContactForm() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+   const sendFormData = new FormData();
+sendFormData.append("access_key", "9489d453-bd00-495b-9956-28861081a4cf");
+sendFormData.append("name", formData.name);
+sendFormData.append("email", formData.email);
+sendFormData.append("message", formData.message);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: sendFormData,
+    });
+      const data = await response.json();
+          if (data.success) {
+            console.log(`Form submitted successfully ${data.message}`);
+    }     
+    else{
+      console.error(`Form submission error: ${data.message}`);
+    }
+   setTimeout(() => {
+    setIsSubmitted(false);
+   }, 5000);
+    setFormData({ name: '', email: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

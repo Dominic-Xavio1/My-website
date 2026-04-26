@@ -14,7 +14,7 @@ const techStack: Tech[] = [
   {
     name: 'Python',
     icon: Code2,
-    description: 'Backend development, data processing, automation',
+    description: 'Backend development, AI-Integration, 2D game development',
     color: '#0ea5e9'
   },
   {
@@ -36,9 +36,9 @@ const techStack: Tech[] = [
     color: '#0ea5e9'
   },
   {
-    name: 'Django',
+    name: 'Express.js',
     icon: Server,
-    description: 'Robust backend APIs, ORM, authentication',
+    description: 'Robust backend APIs, authentication',
     color: '#0ea5e9'
   },
   {

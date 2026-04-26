@@ -57,18 +57,18 @@ export default function InteractiveBook() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               <div className="bg-accent/5 border border-accent/20 rounded-sm p-4">
-                <div className="text-2xl mb-1">5+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-2xl mb-1">My first principle</div>
+                <div className="text-sm text-muted-foreground">Question every 'best practice' until you find the physical laws that govern it.</div>
               </div>
               <div className="bg-accent/5 border border-accent/20 rounded-sm p-4">
-                <div className="text-2xl mb-1">30+</div>
-                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+                <div className="text-2xl mb-1">My second principle</div>
+                <div className="text-sm text-muted-foreground">Build to fail fast, so you can engineer to last.</div>
               </div>
             </div>
 
-            <p className="text-muted-foreground leading-relaxed italic pt-4">
-              "Innovation happens at the intersection of disciplines. That's where I thrive."
-            </p>
+            {/* <p className="text-muted-foreground leading-relaxed italic pt-4">
+              "Innovation happens at the intersection of reasoning. That's where I thrive."
+            </p> */}
           </div>
         </div>
       ),
@@ -92,109 +92,105 @@ export default function InteractiveBook() {
               <p className="text-muted-foreground">
                 My journey began with a childhood fascination for how things work. I would spend
                 hours dismantling toys and gadgets, trying to understand their inner workings.
-                This curiosity naturally led me to pursue both computer science and mechanical
-                engineering.
+                This curiosity naturally led me to pursue both computer science and CAD(computer-aided design).
               </p>
             </div>
 
             <div className="border-l-2 border-accent/50 pl-4">
               <div className="text-sm text-accent mb-2">Professional Evolution</div>
               <p className="text-muted-foreground">
-                After graduating, I realized that my dual expertise was my superpower. I started
-                working on projects that required both software and hardware knowledge, from
-                IoT devices to automated manufacturing systems.
+                After starting building software projects in high school and designing mechanical parts, I realized that my dual expertise was my superpower. I started working on projects that required both software and hardware knowledge, from IoT devices to automated manufacturing systems.
               </p>
             </div>
 
             <div className="border-l-2 border-accent/30 pl-4">
               <div className="text-sm text-accent mb-2">Today</div>
               <p className="text-muted-foreground">
-                Now, I leverage cutting-edge technologies like React, Next.js, and Django on the
-                software side, while designing precision mechanical systems using SolidWorks and
-                advanced CAD tools. When I'm not coding or designing, you'll find me building
-                DIY projects or contributing to open-source communities.
+                Now, I leverage cutting-edge technologies like React, Next.js, and Langchain on the
+                software side, while designing precision mechanical systems using SolidWorks. When I'm not coding or designing, you'll find me building
+                DIY projects or learning new skills.
               </p>
             </div>
           </div>
 
-          <div className="bg-accent/5 border border-accent/20 rounded-sm p-4 mt-6">
+          {/* <div className="bg-accent/5 border border-accent/20 rounded-sm p-4 mt-6">
             <p className="text-sm text-muted-foreground italic">
               "Every line of code I write and every part I design is a step toward building
               systems that make a real difference in people's lives."
             </p>
-          </div>
+          </div> */}
         </div>
       ),
     },
-    {
-      id: 2,
-      title: 'Education',
-      icon: GraduationCap,
-      content: (
-        <div className="space-y-6">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-accent" />
-            </div>
-            <h3 className="text-3xl">Education</h3>
-          </div>
+    // {
+    //   id: 2,
+    //   title: 'Education',
+    //   icon: GraduationCap,
+    //   content: (
+    //     <div className="space-y-6">
+    //       <div className="flex items-center gap-3 mb-8">
+    //         <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+    //           <GraduationCap className="w-6 h-6 text-accent" />
+    //         </div>
+    //         <h3 className="text-3xl">Education</h3>
+    //       </div>
 
-          <div className="space-y-6">
-            <div className="bg-card border border-border rounded-sm p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h4 className="text-xl mb-2">Bachelor of Science in Computer Science</h4>
-                  <p className="text-sm text-accent">University of Technology</p>
-                </div>
-                <div className="text-sm text-muted-foreground">2016 - 2020</div>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Focused on software engineering, algorithms, and web development. Graduated with honors.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">GPA: 3.8/4.0</span>
-                <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">Dean's List</span>
-              </div>
-            </div>
+    //       <div className="space-y-6">
+    //         <div className="bg-card border border-border rounded-sm p-6">
+    //           <div className="flex items-start justify-between mb-4">
+    //             <div>
+    //               <h4 className="text-xl mb-2">Bachelor of Science in Computer Science</h4>
+    //               <p className="text-sm text-accent">University of Technology</p>
+    //             </div>
+    //             <div className="text-sm text-muted-foreground">2016 - 2020</div>
+    //           </div>
+    //           <p className="text-sm text-muted-foreground">
+    //             Focused on software engineering, algorithms, and web development. Graduated with honors.
+    //           </p>
+    //           <div className="flex flex-wrap gap-2 mt-4">
+    //             <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">GPA: 3.8/4.0</span>
+    //             <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">Dean's List</span>
+    //           </div>
+    //         </div>
 
-            <div className="bg-card border border-border rounded-sm p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h4 className="text-xl mb-2">Bachelor of Science in Mechanical Engineering</h4>
-                  <p className="text-sm text-accent">Institute of Engineering</p>
-                </div>
-                <div className="text-sm text-muted-foreground">2017 - 2021</div>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Specialized in CAD design, thermodynamics, and manufacturing processes. Capstone project on robotic systems.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">GPA: 3.9/4.0</span>
-                <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">Summa Cum Laude</span>
-              </div>
-            </div>
-          </div>
+    //         <div className="bg-card border border-border rounded-sm p-6">
+    //           <div className="flex items-start justify-between mb-4">
+    //             <div>
+    //               <h4 className="text-xl mb-2">Bachelor of Science in Mechanical Engineering</h4>
+    //               <p className="text-sm text-accent">Institute of Engineering</p>
+    //             </div>
+    //             <div className="text-sm text-muted-foreground">2017 - 2021</div>
+    //           </div>
+    //           <p className="text-sm text-muted-foreground">
+    //             Specialized in CAD design, thermodynamics, and manufacturing processes. Capstone project on robotic systems.
+    //           </p>
+    //           <div className="flex flex-wrap gap-2 mt-4">
+    //             <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">GPA: 3.9/4.0</span>
+    //             <span className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full">Summa Cum Laude</span>
+    //           </div>
+    //         </div>
+    //       </div>
 
-          <div className="border-t border-border pt-6 mt-6">
-            <h4 className="mb-4">Certifications</h4>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
-                AWS Solutions Architect
-              </div>
-              <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
-                SolidWorks Professional
-              </div>
-              <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
-                Professional Engineer (PE)
-              </div>
-              <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
-                Google Cloud Certified
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
+    //       <div className="border-t border-border pt-6 mt-6">
+    //         <h4 className="mb-4">Certifications</h4>
+    //         <div className="grid grid-cols-2 gap-3">
+    //           <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
+    //             AWS Solutions Architect
+    //           </div>
+    //           <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
+    //             SolidWorks Professional
+    //           </div>
+    //           <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
+    //             Professional Engineer (PE)
+    //           </div>
+    //           <div className="text-sm bg-accent/5 border border-accent/20 rounded-sm p-3">
+    //             Google Cloud Certified
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   ),
+    // },
   ];
 
   const nextPage = () => {
@@ -311,7 +307,7 @@ export default function InteractiveBook() {
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent/50 via-accent to-accent/50" />
 
                 <div className="p-12 min-h-[600px]" style={{ transformStyle: 'preserve-3d' }}>
-                  <AnimatePresence mode="wait" custom={direction}>
+                  <AnimatePresence mode="popLayout" custom={direction}>
                     <motion.div
                       key={currentPage}
                       custom={direction}
