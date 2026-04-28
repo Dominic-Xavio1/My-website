@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Code, Box, Hammer, X, ExternalLink, Github } from 'lucide-react';
-
+import sms from "../images/sms.png";
 interface Project {
   title: string;
   description: string;
@@ -13,15 +13,15 @@ const projects = {
   development: [
     {
       title: 'E-Commerce Platform',
-      description: 'Full-stack Next.js application with Stripe integration',
-      tech: ['Next.js', 'React', 'PostgreSQL', 'Stripe'],
+      description: 'Full-stack Django application with bootstrap integration',
+      tech: ['Django', 'html', 'sql', 'bootstrap'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
     },
     {
-      title: 'Real-time Dashboard',
-      description: 'Django REST API with React frontend and WebSocket updates',
-      tech: ['Django', 'React', 'WebSocket', 'PostgreSQL'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'
+      title: 'School Management System',
+      description: 'Next.js for fast development with redis and WebSocket updates',
+      tech: ['Next.js', 'React', 'WebSocket', 'PostgreSQL', 'Redis','Tailwindcss'],
+      image: sms
     },
     {
       title: 'AI Content Generator',
@@ -32,36 +32,36 @@ const projects = {
   ],
   engineering: [
     {
-      title: 'Precision Gearbox Assembly',
-      description: 'Multi-stage reduction gearbox designed in SolidWorks',
+      title: 'Oil Pump Jack Gearbox Design',
+      description: 'Detailed gearbox design for an oil pump jack, including stress analysis and optimization',
       tech: ['SolidWorks', 'FEA', 'Technical Drawing'],
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80'
+      image: 'https://img-new.cgtrader.com/items/4292968/24f4faca67/rotary-piston-oil-pump-solidworks-tutorial-3d-model-24f4faca67.webp'
     },
     {
-      title: 'Automated Test Fixture',
-      description: 'Custom fixture for product quality testing',
+      title: 'Cutting Machine Fixture Design',
+      description: 'Custom fixture for CNC cutting machine to ensure part stability and precision',
       tech: ['SolidWorks', 'Manufacturing', '3D Printing'],
-      image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80'
+      image: 'https://i.ytimg.com/vi/hMUDfsbfWDQ/maxresdefault.jpg'
     },
     {
-      title: 'Robotic Arm Design',
-      description: '6-axis robotic arm with precision control',
+      title: 'Simulated Drone Design',
+      description: 'Quadcopter design with kinematic analysis and control system simulation',
       tech: ['SolidWorks', 'Kinematics', 'Control Systems'],
-      image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=800&q=80'
+      image: 'https://content.instructables.com/FNF/8SGC/LRT85QKC/FNF8SGCLRT85QKC.jpg?frame=true&width=720&height=1024&fit=bounds&crop=3:2'
     }
   ],
   diy: [
     {
-      title: 'Custom Mechanical Keyboard',
-      description: 'Hand-wired 60% keyboard with custom case',
+      title: 'Street Light Control System',
+      description: 'Arduino-based street light controller with light and motion sensors',
       tech: ['CAD', 'Electronics', 'Firmware'],
-      image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80'
+      image: 'https://i.ytimg.com/vi/bIA72PQXw5Y/hqdefault.jpg'
     },
     {
-      title: 'Smart Home Controller',
-      description: 'Raspberry Pi-based home automation system',
-      tech: ['Python', 'IoT', 'Electronics'],
-      image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80'
+      title: 'Propellant Rocket Engine',
+      description: 'Small-scale liquid-fueled rocket engine for educational purposes',
+      tech: ['Physics', 'Chemistry', 'Electronics'],  
+      image: 'https://i0.wp.com/cdn.makezine.com/uploads/2013/09/m35_ss_sugarrocket_opener.jpg?ssl=1'
     },
     {
       title: 'CNC Router Build',
@@ -154,11 +154,29 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           </div>
 
           <div className="flex gap-4">
-            <button className="flex items-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-sm transition-colors">
+            <button className="flex items-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-sm transition-colors"
+              onClick={()=>{
+  if(project.title === 'E-Commerce Platform'){
+    window.open('https://rv9n64-8000.csb.app', '_blank');
+  }
+  else if(project.title === 'School Management System'){
+    window.open('https://asyvcommunity.vercel.app/', '_blank');
+  }
+              }}
+            >
               <ExternalLink className="w-4 h-4" />
               View Live
             </button>
-            <button className="flex items-center gap-2 border border-border hover:border-accent hover:text-accent px-6 py-3 rounded-sm transition-colors">
+            <button className="flex items-center gap-2 border border-border hover:border-accent hover:text-accent px-6 py-3 rounded-sm transition-colors"
+            onClick={()=>{
+              if(project.title==="E-Commerce Platform"){
+                window.open('https://codesandbox.io/p/devbox/djangocar-project-rv9n64', '_blank');
+              }
+              else if(project.title === 'School Management System'){
+                window.open('https://github.com/Dominic-Xavio1/asyv.org', '_blank');
+              }
+            }}
+            >
               <Github className="w-4 h-4" />
               Source Code
             </button>

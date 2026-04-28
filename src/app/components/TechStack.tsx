@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Code2, Database, Layout, Server } from 'lucide-react';
+import { Code2, Database, Globe, Layout, Leaf,Code,FileCode, Palette, Server,Share2,Shield, Terminal, Wind, } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface Tech {
@@ -46,7 +46,63 @@ const techStack: Tech[] = [
     icon: Database,
     description: 'Relational database design, optimization, queries',
     color: '#0ea5e9'
-  }
+  },
+{
+  name: 'MongoDB',
+  icon: Leaf,
+  description: 'NoSQL document database, aggregation pipelines, and indexing',
+  color: '#10b981' 
+},
+{
+  name: 'Django',
+  icon: Terminal, // Or 'Terminal' representing secure Python backend development
+  description: 'Python web framework, ORM, authentication, and REST APIs',
+  color: '#22e399' 
+},
+{
+  name: 'HTML5',
+  icon: Globe, 
+  description: 'Semantic page structure, accessibility, and modern web standards',
+  color: '#ea580c' 
+},
+{
+  name: 'CSS3',
+  icon: Palette,
+  description: 'Responsive design, layouts, animations, and typography',
+  color: '#2563eb'
+},
+{
+  name: 'Tailwind CSS',
+  icon: Wind, 
+  description: 'Utility-first styling, rapid UI development, and custom themes',
+  color: '#06b6d4'
+},{
+  name: 'Node.js',
+  icon: Server, 
+  description: 'Server-side JavaScript runtime, REST APIs, and scalable backends',
+  color: '#15803d'
+},
+{
+  name: 'PG',
+  icon: Share2, 
+  description: 'Non-blocking PostgreSQL client for Node.js database connections',
+  color: '#334155'
+},
+{
+  name: 'Java',
+  icon: FileCode, 
+  description: 'Write once run anywhere, robust backend development, and Android apps',
+  color: '#334155'
+}
+,
+{
+  name: 'C++',
+  icon: Code, 
+  description: 'High-performance systems programming, game development, and embedded systems',
+  color: '#334155'
+}
+
+
 ];
 
 function TechCard({ tech, index }: { tech: Tech; index: number }) {
