@@ -14,97 +14,94 @@ const techStack: Tech[] = [
   {
     name: 'Python',
     icon: Code2,
-    description: 'Backend development, AI-Integration, 2D game development',
+    description: 'Versatile language used for backend development, automation, and AI systems. Experienced in building high-performance APIs with FastAPI, integrating machine learning models, and developing simulation-based and 2D game logic.',
     color: '#0ea5e9'
   },
   {
     name: 'JavaScript/TypeScript',
     icon: Code2,
-    description: 'Full-stack development, type-safe applications',
+    description: 'Core language for modern web development, used across both frontend and backend. TypeScript adds strong typing for building scalable, maintainable, and error-resistant applications.',
     color: '#0ea5e9'
   },
   {
     name: 'React',
     icon: Layout,
-    description: 'Modern UI development, component architecture',
+    description: 'Component-based frontend library for building dynamic and responsive user interfaces. Skilled in state management, reusable UI architecture, and optimizing rendering performance.',
     color: '#0ea5e9'
   },
   {
     name: 'Next.js',
     icon: Server,
-    description: 'Server-side rendering, static generation, API routes',
+    description: 'Full-stack React framework enabling server-side rendering, static site generation, and API routes. Used to build high-performance, SEO-friendly, and production-ready applications.',
     color: '#0ea5e9'
   },
   {
     name: 'Express.js',
     icon: Server,
-    description: 'Robust backend APIs, authentication',
+    description: 'Minimal and flexible Node.js framework for building robust RESTful APIs. Experienced in middleware design, authentication systems, and structuring scalable backend architectures.',
     color: '#0ea5e9'
   },
   {
     name: 'PostgreSQL',
     icon: Database,
-    description: 'Relational database design, optimization, queries',
+    description: 'Advanced relational database system used for designing structured schemas, writing complex queries, and optimizing performance through indexing and normalization.',
     color: '#0ea5e9'
   },
-{
-  name: 'MongoDB',
-  icon: Leaf,
-  description: 'NoSQL document database, aggregation pipelines, and indexing',
-  color: '#10b981' 
-},
-{
-  name: 'Django',
-  icon: Terminal, // Or 'Terminal' representing secure Python backend development
-  description: 'Python web framework, ORM, authentication, and REST APIs',
-  color: '#22e399' 
-},
-{
-  name: 'HTML5',
-  icon: Globe, 
-  description: 'Semantic page structure, accessibility, and modern web standards',
-  color: '#ea580c' 
-},
-{
-  name: 'CSS3',
-  icon: Palette,
-  description: 'Responsive design, layouts, animations, and typography',
-  color: '#2563eb'
-},
-{
-  name: 'Tailwind CSS',
-  icon: Wind, 
-  description: 'Utility-first styling, rapid UI development, and custom themes',
-  color: '#06b6d4'
-},{
-  name: 'Node.js',
-  icon: Server, 
-  description: 'Server-side JavaScript runtime, REST APIs, and scalable backends',
-  color: '#15803d'
-},
-{
-  name: 'PG',
-  icon: Share2, 
-  description: 'Non-blocking PostgreSQL client for Node.js database connections',
-  color: '#334155'
-},
-{
-  name: 'Java',
-  icon: FileCode, 
-  description: 'Write once run anywhere, robust backend development, and Android apps',
-  color: '#334155'
-}
-,
-{
-  name: 'C++',
-  icon: Code, 
-  description: 'High-performance systems programming, game development, and embedded systems',
-  color: '#334155'
-}
-
-
+  {
+    name: 'MongoDB',
+    icon: Leaf,
+    description: 'NoSQL document database for flexible and scalable data storage. Skilled in schema design, aggregation pipelines, indexing strategies, and handling large-scale unstructured data.',
+    color: '#10b981' 
+  },
+  {
+    name: 'Django',
+    icon: Terminal,
+    description: 'High-level Python web framework that promotes rapid development and clean architecture. Experienced with ORM, authentication systems, admin dashboards, and REST API integration.',
+    color: '#22e399' 
+  },
+  {
+    name: 'HTML5',
+    icon: Globe,
+    description: 'Foundation of web development used to create semantic, accessible, and well-structured web pages following modern web standards.',
+    color: '#ea580c' 
+  },
+  {
+    name: 'CSS3',
+    icon: Palette,
+    description: 'Styling language used to design responsive layouts, animations, and visually engaging interfaces, including Flexbox, Grid, and modern UI techniques.',
+    color: '#2563eb'
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: Wind,
+    description: 'Utility-first CSS framework that enables rapid UI development with consistent design systems, responsive layouts, and highly customizable styling.',
+    color: '#06b6d4'
+  },
+  {
+    name: 'Node.js',
+    icon: Server,
+    description: 'JavaScript runtime for building fast and scalable server-side applications using event-driven, non-blocking architecture.',
+    color: '#15803d'
+  },
+  {
+    name: 'PG',
+    icon: Share2,
+    description: 'Lightweight PostgreSQL client for Node.js used to manage database connections, execute queries, and handle transactions efficiently in backend systems.',
+    color: '#334155'
+  },
+  {
+    name: 'Java',
+    icon: FileCode,
+    description: 'Object-oriented programming language used for building robust backend systems and Android applications with strong performance and cross-platform capabilities.',
+    color: '#334155'
+  },
+  {
+    name: 'C++',
+    icon: Code,
+    description: 'High-performance programming language used for system-level development, simulations, and embedded systems requiring speed and memory control.',
+    color: '#334155'
+  }
 ];
-
 function TechCard({ tech, index }: { tech: Tech; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 

@@ -13,61 +13,132 @@ const projects = {
   development: [
     {
       title: 'E-Commerce Platform',
-      description: 'Full-stack Django application with bootstrap integration',
-      tech: ['Django', 'html', 'sql', 'bootstrap'],
+      description: 'A full-stack e-commerce web application built with Django, featuring secure user authentication, product catalog management, shopping cart functionality, and order processing. Integrated responsive UI with Bootstrap and implemented RESTful APIs for scalable frontend-backend communication. Includes admin dashboard for inventory and sales management.',
+      tech: [
+        'Django',
+        'Django REST Framework',
+        'HTML',
+        'CSS',
+        'Bootstrap',
+        'JavaScript',
+        'PostgreSQL',
+        'Stripe API'
+      ],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
     },
     {
       title: 'School Management System',
-      description: 'Next.js for fast development with redis and WebSocket updates',
-      tech: ['Next.js', 'React', 'WebSocket', 'PostgreSQL', 'Redis','Tailwindcss'],
+      description: 'A high-performance, real-time school management platform designed to handle student records, attendance, grading, and communication between staff and students. Built with Next.js for server-side rendering and optimized performance, with WebSocket integration for live updates (notifications, results). Redis is used for caching and session management to ensure speed and scalability.',
+      tech: [
+        'Next.js',
+        'React',
+        'Node.js',
+        'Express',
+        'WebSocket',
+        'PostgreSQL',
+        'Redis',
+        'Tailwind CSS',
+        'JWT Authentication'
+      ],
       image: sms
     },
     {
       title: 'AI Content Generator',
-      description: 'Python-based content generation with GPT integration',
-      tech: ['Python', 'FastAPI', 'OpenAI', 'React'],
+      description: 'An AI-powered content generation platform that uses GPT models to create articles, summaries, and custom text outputs. Built with FastAPI for high-speed backend processing and integrated with OpenAI APIs. Features user input customization, prompt engineering, and a responsive React frontend for seamless interaction.',
+      tech: [
+        'Python',
+        'FastAPI',
+        'OpenAI API',
+        'React',
+        'JavaScript',
+        'Axios',
+        'PostgreSQL',
+        'Docker'
+      ],
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80'
     }
   ],
+
   engineering: [
     {
       title: 'Oil Pump Jack Gearbox Design',
-      description: 'Detailed gearbox design for an oil pump jack, including stress analysis and optimization',
-      tech: ['SolidWorks', 'FEA', 'Technical Drawing'],
+      description: 'Designed a mechanical gearbox system for an oil pump jack, including torque calculations, gear ratio optimization, and stress analysis. Performed Finite Element Analysis (FEA) to ensure durability under continuous load conditions and created detailed technical drawings for manufacturing.',
+      tech: [
+        'SolidWorks',
+        'Finite Element Analysis (FEA)',
+        'Mechanical Design',
+        'Gear Design',
+        'Technical Drawing',
+        'Material Science'
+      ],
       image: 'https://img-new.cgtrader.com/items/4292968/24f4faca67/rotary-piston-oil-pump-solidworks-tutorial-3d-model-24f4faca67.webp'
     },
     {
       title: 'Cutting Machine Fixture Design',
-      description: 'Custom fixture for CNC cutting machine to ensure part stability and precision',
-      tech: ['SolidWorks', 'Manufacturing', '3D Printing'],
+      description: 'Developed a precision fixture for CNC machining operations to improve workpiece stability and cutting accuracy. Designed using SolidWorks and validated for manufacturability. Prototype components were produced using 3D printing to test fit and performance before final production.',
+      tech: [
+        'SolidWorks',
+        'CNC Manufacturing',
+        '3D Printing',
+        'Mechanical Design',
+        'Tolerance Analysis'
+      ],
       image: 'https://i.ytimg.com/vi/hMUDfsbfWDQ/maxresdefault.jpg'
     },
     {
       title: 'Simulated Drone Design',
-      description: 'Quadcopter design with kinematic analysis and control system simulation',
-      tech: ['SolidWorks', 'Kinematics', 'Control Systems'],
+      description: 'Designed and simulated a quadcopter drone system, including frame structure, propulsion system, and control mechanisms. Conducted kinematic and dynamic analysis and implemented basic control system simulations for flight stability and maneuverability.',
+      tech: [
+        'SolidWorks',
+        'Kinematics',
+        'Control Systems',
+        'MATLAB/Simulink',
+        'Aerodynamics',
+        'Embedded Systems'
+      ],
       image: 'https://content.instructables.com/FNF/8SGC/LRT85QKC/FNF8SGCLRT85QKC.jpg?frame=true&width=720&height=1024&fit=bounds&crop=3:2'
     }
   ],
+
   diy: [
     {
       title: 'Street Light Control System',
-      description: 'Arduino-based street light controller with light and motion sensors',
-      tech: ['CAD', 'Electronics', 'Firmware'],
+      description: 'Built an intelligent street lighting system using Arduino that automatically adjusts lighting based on ambient light levels and motion detection. Designed to reduce energy consumption while maintaining safety. Includes sensor integration and real-time control logic.',
+      tech: [
+        'Arduino',
+        'Embedded C',
+        'Sensors (LDR, PIR)',
+        'Electronics',
+        'Circuit Design',
+        'Firmware Development'
+      ],
       image: 'https://i.ytimg.com/vi/bIA72PQXw5Y/hqdefault.jpg'
     },
     {
       title: 'Propellant Rocket Engine',
-      description: 'Small-scale liquid-fueled rocket engine for educational purposes',
-      tech: ['Physics', 'Chemistry', 'Electronics'],  
+      description: 'Designed and tested a small-scale liquid/solid propellant rocket engine for educational and experimental purposes. Focused on combustion principles, thrust generation, and safety considerations. Applied physics and chemistry concepts to achieve controlled propulsion.',
+      tech: [
+        'Physics (Thermodynamics)',
+        'Chemistry (Combustion)',
+        'Mechanical Design',
+        'Fluid Dynamics',
+        'Electronics (Ignition Systems)'
+      ],
       image: 'https://i0.wp.com/cdn.makezine.com/uploads/2013/09/m35_ss_sugarrocket_opener.jpg?ssl=1'
     },
     {
-      title: 'CNC Router Build',
-      description: 'Custom-built CNC router for woodworking',
-      tech: ['Mechanical Design', 'Electronics', 'Firmware'],
-      image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80'
+      title: 'Air Threat Detector',
+      description: 'Developed a prototype air surveillance system capable of detecting and tracking aerial objects using a combination of radar principles and computer vision. Integrated sensors with embedded systems and implemented basic object detection algorithms for tracking.',
+      tech: [
+        'Computer Vision',
+        'Python',
+        'OpenCV',
+        'Embedded Systems',
+        'Electronics',
+        'Signal Processing',
+        'Mechanical Design'
+      ],
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQlLA8zBSinUgHfwe6ow0R0Gb7Pqwo1D8yA&s'
     }
   ]
 };
@@ -116,15 +187,15 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md flex items-center justify-center p-6"
+      className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md flex items-center justify-center p-6 overflow-y-auto "
       onClick={onClose}
     >
       <motion.div
         layoutId={`project-${project.title}`}
-        className="bg-card border border-border rounded-sm max-w-4xl w-full overflow-hidden"
+        className="bg-card border border-border rounded-sm max-w-2xl w-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative h-96">
+        <div className="relative h-90 ">
           <img
             src={project.image}
             alt={project.title}
@@ -132,9 +203,9 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm p-2 rounded-sm hover:bg-accent transition-colors"
+            className="absolute top-12 right-4 bg-background/80 backdrop-blur-sm p-2 rounded-sm hover:bg-accent transition-colors"
           >
-            <X className="w-6 h-6" />
+            <X className="w-8 h-5" />
           </button>
         </div>
 
