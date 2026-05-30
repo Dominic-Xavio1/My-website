@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-
+import myimage from '../images/myimage.png';
 interface CodeLine {
   id: number;
   text: string;
@@ -22,7 +22,7 @@ const codeSnippets = [
 ];
 
 export default function Hero3D() {
-  const [codeLines, setCodeLines] = useState<CodeLine[]>([]);
+  const [codeLines, setCodeLines] = useState([]);
   const [lineId, setLineId] = useState(0);
 
   useEffect(() => {
@@ -59,23 +59,22 @@ export default function Hero3D() {
             View Projects
           </button>
         </motion.div>
-
-        <motion.div
+<div className="">
+       <img src={myimage} alt="My Image" className="w-48 h-64 lg:w-144 lg:h-114 rounded-xl object-cover shadow-lg" />
+       </div>
+         {/* <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="h-[500px] relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 rounded-lg border border-slate-800 overflow-hidden shadow-2xl"
         >
-          {/* Programmer Silhouette */}
           <div className="absolute bottom-12 left-8 z-10">
             <svg width="140" height="160" viewBox="0 0 140 160" className="opacity-80">
-              {/* Head */}
+              
               <circle cx="70" cy="25" r="18" fill="#0ea5e9" opacity="0.3" />
 
-              {/* Body */}
               <rect x="55" y="45" width="30" height="50" fill="#0ea5e9" opacity="0.2" rx="4" />
 
-              {/* Left Arm - Typing */}
               <g>
                 <line
                   x1="55"
@@ -90,7 +89,6 @@ export default function Hero3D() {
                 <circle cx="25" cy="68" r="6" fill="#ffffff" opacity="0.5" />
               </g>
 
-              {/* Right Arm - Typing */}
               <g>
                 <line
                   x1="85"
@@ -104,8 +102,6 @@ export default function Hero3D() {
                 />
                 <circle cx="115" cy="68" r="6" fill="#ffffff" opacity="0.5" />
               </g>
-
-              {/* Legs */}
               <line
                 x1="60"
                 y1="95"
@@ -129,10 +125,8 @@ export default function Hero3D() {
             </svg>
           </div>
 
-          {/* Terminal Screen - Glowing effect */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(14,165,233,0.05)_0%,_transparent_70%)]" />
 
-          {/* Code Waterfall */}
           <div className="absolute inset-0 flex flex-col justify-end p-6 overflow-hidden">
             <div className="space-y-1 font-mono text-sm tracking-wide h-full flex flex-col justify-end">
               {codeLines.map((line) => (
@@ -153,7 +147,6 @@ export default function Hero3D() {
               ))}
             </div>
 
-            {/* Cursor blink */}
             <motion.div
               animate={{ opacity: [1, 0] }}
               transition={{ duration: 0.8, repeat: Infinity }}
@@ -161,11 +154,9 @@ export default function Hero3D() {
               style={{ boxShadow: '0 0 8px #0ea5e9' }}
             />
           </div>
-
-          {/* Corner accent lights */}
           <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-full blur-xl" />
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-cyan-500/5 to-transparent rounded-full blur-xl" />
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <style>{`

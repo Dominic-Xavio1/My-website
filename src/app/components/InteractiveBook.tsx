@@ -1,18 +1,44 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, GraduationCap, User, BookOpen, Download } from 'lucide-react';
 import myimage from '../images/myimage.png';
 import cvFile from './files/resume.pdf';
-interface Page {
-  id: number;
-  title: string;
-  icon: any;
-  content: JSX.Element;
-}
+// interface Page {
+//   id: number;
+//   title: string;
+//   icon: any;
+//   content: JSX.Element;
+// }
 
 export default function InteractiveBook() {
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [codeLines, setCodeLines] = useState([]);
+  const [lineId, setLineId] = useState(0);
+  const codeSnippets = [
+  { text: 'const user = getUserData();', color: '#0ea5e9' },
+  { text: 'if (auth.verified) {', color: '#ffffff' },
+  { text: '  socket.emit("connected");', color: '#64748b' },
+  { text: '  return data.parse();', color: '#0ea5e9' },
+  { text: '}', color: '#ffffff' },
+  { text: 'database.query(sql);', color: '#0ea5e9' },
+  { text: 'fetch("/api/stream");', color: '#ffffff' },
+  { text: 'render(component);', color: '#64748b' },
+  { text: 'console.log("Deployed ✓");', color: '#0ea5e9' },
+];
+   useEffect(() => {
+      const interval = setInterval(() => {
+        const randomSnippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+        setCodeLines((prev) => {
+          const updated = [...prev, { id: lineId, text: randomSnippet.text, color: randomSnippet.color }];
+          if (updated.length > 15) updated.shift();
+          return updated;
+        });
+        setLineId((prev) => prev + 1);
+      }, 400);
+  
+      return () => clearInterval(interval);
+    }, [lineId]);
 
   const handleDownloadCV = () => {
     // Create a link to download the imported PDF file
@@ -24,16 +50,122 @@ export default function InteractiveBook() {
     document.body.removeChild(link);
   };
 
-  const pages: Page[] = [
+  const pages = [
     {
       id: 0,
       title: 'About Me',
       icon: User,
       content: (
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
-          <div className="flex-shrink-0">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-2 items-center lg:items-start">
+          {/* <div className="flex-shrink-0">
             <img src={myimage} alt="My Image" className="w-48 h-64 lg:w-64 lg:h-64 rounded-xl object-cover shadow-lg" />
+          </div> */}
+            <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full lg:w-[400px] flex-shrink-0 h-[500px] relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 rounded-lg border border-slate-800 overflow-hidden shadow-2xl lg:mr-8"
+        >
+          {/* Programmer Silhouette */}
+          <div className="absolute bottom-12 left-8 z-10">
+            <svg width="140" height="160" viewBox="0 0 140 160" className="opacity-80">
+              {/* Head */}
+              <circle cx="70" cy="25" r="18" fill="#0ea5e9" opacity="0.3" />
+
+              {/* Body */}
+              <rect x="55" y="45" width="30" height="50" fill="#0ea5e9" opacity="0.2" rx="4" />
+
+              {/* Left Arm - Typing */}
+              <g>
+                <line
+                  x1="55"
+                  y1="55"
+                  x2="30"
+                  y2="65"
+                  stroke="#0ea5e9"
+                  strokeWidth="4"
+                  opacity="0.4"
+                  strokeLinecap="round"
+                />
+                <circle cx="25" cy="68" r="6" fill="#ffffff" opacity="0.5" />
+              </g>
+
+              {/* Right Arm - Typing */}
+              <g>
+                <line
+                  x1="85"
+                  y1="55"
+                  x2="110"
+                  y2="65"
+                  stroke="#0ea5e9"
+                  opacity="0.4"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+                <circle cx="115" cy="68" r="6" fill="#ffffff" opacity="0.5" />
+              </g>
+
+              {/* Legs */}
+              <line
+                x1="60"
+                y1="95"
+                x2="55"
+                y2="125"
+                stroke="#334155"
+                strokeWidth="4"
+                opacity="0.3"
+                strokeLinecap="round"
+              />
+              <line
+                x1="80"
+                y1="95"
+                x2="85"
+                y2="125"
+                stroke="#334155"
+                strokeWidth="4"
+                opacity="0.3"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
+
+          {/* Terminal Screen - Glowing effect */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(14,165,233,0.05)_0%,_transparent_70%)]" />
+
+          {/* Code Waterfall */}
+          <div className="absolute inset-0 flex flex-col justify-end p-6 overflow-hidden">
+            <div className="space-y-1 font-mono text-sm tracking-wide h-full flex flex-col justify-end">
+              {codeLines.map((line) => (
+                <motion.div
+                  key={line.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="whitespace-nowrap"
+                  style={{
+                    color: line.color,
+                    textShadow: `0 0 10px ${line.color}80`,
+                  }}
+                >
+                  &gt; {line.text}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Cursor blink */}
+            <motion.div
+              animate={{ opacity: [1, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity }}
+              className="absolute right-6 bottom-6 w-2 h-6 bg-cyan-400"
+              style={{ boxShadow: '0 0 8px #0ea5e9' }}
+            />
+          </div>
+
+          {/* Corner accent lights */}
+          <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-full blur-xl" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-cyan-500/5 to-transparent rounded-full blur-xl" />
+        </motion.div>
           <div className="flex-1 space-y-6 text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
               <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
